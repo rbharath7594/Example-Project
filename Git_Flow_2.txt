@@ -1,0 +1,152 @@
+9. Comparing Commits
+
+In GitHub, create a new repository <Example-Project> 
+Include files in the repository <ReadMe>, <file1>
+
+Clone <Example-Project> to local 
+
+In GitHub, add <file2> to <Example-Project> and commit
+
+In Git Bash,
+
+git checkout -b develop
+git pull origin master
+
+git checkout master
+<Modify the content of ReadMe file>
+git add .
+git status
+git commit -m "ReadMe file updated"
+
+git show (or) git diff develop master
+
+**************************************************************************************************
+
+10. Check Status
+
+In GitHub, navigate to a <repository>
+
+git checkout -b trial
+
+touch test1
+git status -s
+
+git add test1
+git status -s
+
+(Modify the content of test1)
+git status -s
+
+CP test1 test2
+mv test2 newtest
+rm -f test1
+git status -s
+
+**************************************************************************************************
+11. Merge without 'merge'
+
+In GitHub, navigate to a <repository>
+Switch from Master to Develop branch
+
+touch newfile
+(Modify the content of 'newfile', Save changes)
+git commit -m "newfile modified"
+
+git checkout master
+git merge develop
+
+git checkout develop
+touch newfile1
+(Modify the content of 'newfile1', Save changes)
+git commit -m "newfile1 modified"
+git checkout master
+git rebase develop
+
+**************************************************************************************************
+
+12. Bisect Commits
+
+In GitHub, create a new repository <try-bisect> and navigate to it
+
+git init
+
+touch f1 - edit content - save - commit (note commit1 id)
+edit content again - save - commit (note commit2 id)
+edit content again - save - commit (note commit3 id)
+
+git bisect start
+git bisect good <commit1 id>
+git bisect bad <commit2 id>
+git bisect good <commit3 id>
+
+git bisect log
+
+git bisect reset
+
+
+**************************************************************************************************
+
+13. Alias for commands
+
+In GitHub, navigate to a <repository>
+Do multiple commits with series of changes
+
+git log -1 HEAD
+
+git config --global alias.x "log -1 HEAD"
+
+git x
+
+**************************************************************************************************
+
+14. Changed but not Committed
+
+In GitHub, navigate to a <repository>
+Modify a file, don't commit. Execute and observe the following commands
+
+git stash
+git status
+git stash list
+git stash pop
+
+**************************************************************************************************
+
+15. Cherry Pick
+
+In GitHub, navigate to a <repository>
+Switch to develop branch
+Do multiple commits with series of changes
+
+git cherry-pick <Any particular commit id>
+git cherry -v master <commit id>
+
+**************************************************************************************************
+
+16. Clean Up
+
+In GitHub, navigate to a <repository>
+
+git clean -f
+git clean -fd
+git clean -nfd
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
